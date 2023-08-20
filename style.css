@@ -4,3 +4,8 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+h2 {
+    padding: 2.5%;
+    text-align: center;
+}
