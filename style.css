@@ -2,10 +2,268 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Comfortaa', cursive;
 }
 
-h2 {
-    padding: 2.5%;
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: 0;
+}
+
+:root {
+    --gradient: linear-gradient(
+        45deg, #276174,  #33c58e, #63fd88)
+
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    background-color: whitesmoke;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75% 2.75%;
+    white-space: nowrap;
+    height: 45px !important;
+}
+nav img{
+    display: none;
+}
+nav h3{
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    transition: font-size 0.5s ease-in-out;
+    box-shadow:  -5px -5px 40px #ffffffb2,
+    5px 5px 40px rgba(94, 104, 121, 0.945);
+    padding: 0.25% 1%;
+}
+
+nav h3:hover{
+    font-size: 1.6rem;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 25px;
+    margin-right: 1em;
+    
+}
+
+
+nav ul li a {
+    font-size: 1.25rem;
+    font-weight: 525;
+    text-decoration: none;
+    transition: font-size 0.5s ease-in-out;
+    border-radius: 8.5px;
+    color: black;
+    box-shadow:  -5px -5px 40px #ffffffb2,
+    5px 5px 40px rgba(94, 104, 121, 0.945);
+    padding: 7.5% 15%;
+
+}
+
+nav ul li a:hover {
+    font-size: 1.375rem;
+}
+
+#sectionone {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-image: var(--gradient);
+    background-size: 300%;
+    padding: 10% 5% 8% 5%;
+    gap: 5em;
+    animation: bg-animation 5s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0%{
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+} 
+
+#introText {
+    display: flex;
+    margin-bottom: 5em;
+    flex-direction: column;
+    text-align: start;
+    gap: 15px;
+    opacity: 0.785;
+}
+
+#introText h1 {
+    font-size: 4.5rem;
+    animation: revealText 1s ease-out;
+}
+
+#introText h3 {
+    font-size: 2.25rem;
+    animation: revealText 1.25s ease-out;
+}
+#introText p{
+    padding: 5% 0%;
+    font-size: 1.15em;
+    animation: revealText 1.45s ease-out;
+}
+#sectionone img{
+    height: 30em;
+    border-radius: 25px;
+    box-shadow: 0px 0px 70px 5px white;
+    animation: revealImg 1.35s ease-out;
+}
+
+
+
+@keyframes revealText {
+    0%{
+        translate: -50%;
+        opacity: 0.1;
+    }
+
+    100% {
+        translate: 0 0;
+        opacity: 1;
+    }
+} 
+
+@keyframes revealImg {
+    0%{
+        translate: 50%;
+        opacity: 0.1;
+    }
+
+    100% {
+        translate: 0 0;
+        opacity: 1;
+    }
+} 
+
+.blinking-cursor {
+    font-weight: 100;
+    font-size: 4rem;
+    color: white;
+    opacity: 0.785;
+    animation: 2s blink step-end infinite;
+  }
+  
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+
+  @media all and (max-width: 1000px) {
+    #sectionone img {
+        height: 23.5em;
+    }
+    nav h3 {
+        border-radius: 10px;
+    }
+    
+    #introText {
+    margin-bottom: 3.5em;
+    }
+
+    #introText h1 {
+    font-size: 3.35rem;
+    }
+
+    #introText h3 {
+    font-size: 2rem;
+    }
+    #introText p{
+    padding: 5% 0%;
+    font-size: 1em;
+}
+    .blinking-cursor {
+        font-size: 3.35rem;
+    }
+  
+}
+
+@media all and (max-width: 700px) {
+    #sectionone img {
+        display: none
+    }
+    
+    nav img {
+        display: flex;
+        width: 2em;
+        padding: 10%;
+        border-radius: 5px;
+        box-shadow:  -5px -5px 40px #ffffffb2,
+        5px 5px 40px rgba(94, 104, 121, 0.945);
+    }
+    nav ul{
+        margin: 0;
+    }
+    nav ul li {
+        display: none;
+    }
+    nav h3{
+        font-size: 1.2rem ;
+    }
+    nav h3:hover{
+        font-size: 1.1rem;
+    }
+    #introText {
+    margin-bottom: 3.5em;
     text-align: center;
+    }
+
+    #introText h1 {
+    font-size: 3rem;
+    }
+
+    #introText h3 {
+    font-size: 1.8rem;
+    }
+    #introText p{
+    padding: 5% 0%;
+    font-size: 1em;
+}
+.blinking-cursor {
+    font-size: 3.35rem;
+  }
+  
+}
+
+
+@media all and (max-width: 500px) {
+    nav h3{
+        border-radius: 10px;
+        padding: 2% 3%;
+        font-size: 1rem ;
+    }
+
+
+}
+
+footer {
+    background: linear-gradient(45deg, #879af2, #d3208b, #fda000);
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: 100vw;
+    padding: 2.5% ;
+    color: whitesmoke;
+    z-index: 2;
 }
