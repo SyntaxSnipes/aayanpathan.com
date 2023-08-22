@@ -8,7 +8,7 @@
 body{
     margin: 0;
     padding: 0;
-    overflow-x: 0;
+    overflow-x: hidden;
 }
 
 :root {
@@ -20,7 +20,7 @@ body{
 nav {
     display: flex;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 1;
     background-color: whitesmoke;
     flex-direction: row;
@@ -75,7 +75,6 @@ nav ul li a:hover {
 
 #sectionone {
     display: flex;
-    height: 100vh;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -117,7 +116,7 @@ nav ul li a:hover {
 }
 #introText p{
     padding: 5% 0%;
-    font-size: 1.15em;
+    font-size: 1.1em;
     animation: revealText 1.45s ease-out;
 }
 #sectionone img{
@@ -258,11 +257,11 @@ nav ul li a:hover {
 }
 
 footer {
-    background: linear-gradient(45deg, #879af2, #d3208b, #fda000);
     position: fixed;
     bottom: 0px;
+    background: linear-gradient(45deg, #879af2, #d3208b, #fda000);
     text-align: center;
-    width: 100vw;
+    width: 100%;
     padding: 2.5% ;
     color: whitesmoke;
     z-index: 2;
