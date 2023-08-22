@@ -81,9 +81,10 @@ nav ul li a:hover {
     color: white;
     background-image: var(--gradient);
     background-size: 300%;
-    padding: 10% 5% 8% 5%;
+    padding: 10% 5% 12.5% 7%;
     gap: 5em;
     animation: bg-animation 5s infinite alternate;
+    height: 100vh;
 }
 
 @keyframes bg-animation {
@@ -208,8 +209,8 @@ nav ul li a:hover {
         width: 2em;
         padding: 10%;
         border-radius: 5px;
-        box-shadow:  -5px -5px 40px #ffffffb2,
-        5px 5px 40px rgba(94, 104, 121, 0.945);
+        box-shadow:  -5px -5px 30px #ffffffb2,
+        5px 5px 30px rgba(94, 104, 121, 0.945);
     }
     nav ul{
         margin: 0;
