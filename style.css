@@ -5,46 +5,65 @@
     font-family: 'Comfortaa', cursive;
 }
 
+html {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 45px;
+}
+
 body{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
+section {
+    scroll-snap-align: start;
 }
 
 :root {
     --gradient: linear-gradient(
-        45deg, #276174,  #33c58e, #63fd88)
+        45deg, #879af2, #d3208b, #fda000);
 
+
+    --secondary: linear-gradient(
+        135deg, #274b74, #8233c5, #e963fd);
 }
 
 nav {
     display: flex;
-    position: fixed;
+    position: sticky;
+    top: 0px;
     width: 100%;
     z-index: 1;
-    background-color: whitesmoke;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0.75% 2.75%;
     white-space: nowrap;
     height: 45px !important;
+    background-image: var(--gradient);
+    background-size: 300%;
+    opacity: 0.8;
+    animation: bg-animation 5s infinite alternate;
 }
 nav img{
     display: none;
 }
 nav h3{
-    color: black;
     font-size: 1.5rem;
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.65);
     transition: font-size 0.5s ease-in-out;
     box-shadow:  -5px -5px 40px #ffffffb2,
     5px 5px 40px rgba(94, 104, 121, 0.945);
-    padding: 0.25% 1%;
+    padding: 0.25% 0.8%;
 }
 
 nav h3:hover{
     font-size: 1.6rem;
+    box-shadow:  box-shadow -6px -6px 35px #ffffffb2,
+    6px 6px 35px rgba(94, 104, 121, 0.945);
 }
 nav ul {
     display: flex;
@@ -62,6 +81,7 @@ nav ul li a {
     text-decoration: none;
     transition: font-size 0.5s ease-in-out;
     border-radius: 8.5px;
+    background-color: rgba(255, 255, 255, 0.65);
     color: black;
     box-shadow:  -5px -5px 40px #ffffffb2,
     5px 5px 40px rgba(94, 104, 121, 0.945);
@@ -71,6 +91,8 @@ nav ul li a {
 
 nav ul li a:hover {
     font-size: 1.375rem;
+    box-shadow:  -6px -6px 35px #ffffffb2,
+    6px 6px 35px rgba(94, 104, 121, 0.945);
 }
 
 #sectionone {
@@ -81,10 +103,10 @@ nav ul li a:hover {
     color: white;
     background-image: var(--gradient);
     background-size: 300%;
-    padding: 10% 5% 12.5% 7%;
+    padding: 10% 5% 10% 7%;
     gap: 5em;
     animation: bg-animation 5s infinite alternate;
-    height: 100vh;
+
 }
 
 @keyframes bg-animation {
@@ -108,17 +130,18 @@ nav ul li a:hover {
 
 #introText h1 {
     font-size: 4.5rem;
-    animation: revealText 1s ease-out;
+    animation: revealText 1.5s ease-out;
 }
 
 #introText h3 {
     font-size: 2.25rem;
-    animation: revealText 1.25s ease-out;
+    animation: revealText 1s ease-out;
 }
 #introText p{
     padding: 5% 0%;
     font-size: 1.1em;
-    animation: revealText 1.45s ease-out;
+    animation: revealText 1.8s ease-out;
+    line-height: 1.5em;
 }
 #sectionone img{
     height: 30em;
@@ -155,10 +178,10 @@ nav ul li a:hover {
 
 .blinking-cursor {
     font-weight: 100;
-    font-size: 4rem;
+    font-size: 5rem;
     color: white;
     opacity: 0.785;
-    animation: 2s blink step-end infinite;
+    animation: 1.5s blink step-end infinite;
   }
   
   @keyframes blink {
@@ -171,6 +194,23 @@ nav ul li a:hover {
   }
 
   @media all and (max-width: 1000px) {
+    nav {
+        display: flex;
+        position: sticky !important;
+        top: 0px;
+        width: 100%;
+        z-index: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75% 2.75%;
+        white-space: nowrap;
+        height: 45px !important;
+        background-image: var(--gradient);
+        background-size: 300%;
+        opacity: 0.8;
+        animation: bg-animation 5s infinite alternate;
+    }
     #sectionone img {
         height: 23.5em;
     }
@@ -183,7 +223,7 @@ nav ul li a:hover {
     }
 
     #introText h1 {
-    font-size: 3.35rem;
+    font-size: 3rem;
     }
 
     #introText h3 {
@@ -200,12 +240,34 @@ nav ul li a:hover {
 }
 
 @media all and (max-width: 700px) {
-    #sectionone img {
-        display: none
+    nav {
+        display: flex;
+        position: sticky !important;
+        top: 0px;
+        width: 100%;
+        z-index: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75% 2.75%;
+        white-space: nowrap;
+        height: 45px !important;
+        background-image: var(--gradient);
+        background-size: 300%;
+        opacity: 0.8;
+        animation: bg-animation 5s infinite alternate;
+    }
+
+    #sectionone {
+        align-items: center;
+    }
+    #sectionone img{
+        display: none;
     }
     
     nav img {
         display: flex;
+        background-color: rgba(255, 255, 255, 0.65);
         width: 2em;
         padding: 10%;
         border-radius: 5px;
@@ -219,7 +281,8 @@ nav ul li a:hover {
         display: none;
     }
     nav h3{
-        font-size: 1.2rem ;
+        font-size: 1.2rem;
+        padding: 0.45% 0.8%;
     }
     nav h3:hover{
         font-size: 1.1rem;
@@ -227,14 +290,19 @@ nav ul li a:hover {
     #introText {
     margin-bottom: 3.5em;
     text-align: center;
+    align-self: center;
+    justify-content: center;
+    padding-right: 3.5%;
     }
 
     #introText h1 {
-    font-size: 3rem;
+    padding-left: 7.5%;
+    font-size: 3.2rem;
     }
 
     #introText h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    text-align: center;
     }
     #introText p{
     padding: 5% 0%;
@@ -248,6 +316,9 @@ nav ul li a:hover {
 
 
 @media all and (max-width: 500px) {
+    #sectionone {
+        height: calc(100vh - 45px);
+    }
     nav h3{
         border-radius: 10px;
         padding: 2% 3%;
@@ -257,13 +328,298 @@ nav ul li a:hover {
 
 }
 
-footer {
-    position: fixed;
-    bottom: 0px;
-    background: linear-gradient(45deg, #879af2, #d3208b, #fda000);
-    text-align: center;
-    width: 100%;
-    padding: 2.5% ;
+.background {
+    position:relative;
+    bottom: 50em;
+    display: block;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+
+/* SECTION TWO */
+
+#sectiontwo{
+    display: flex;
+    flex-direction: column;
+    padding: 5% 15% 5% 15%;
+    background-image: url(images/secttwobp.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgb(155, 155, 155);
+    background-blend-mode: multiply;
+    align-items: center;
+    gap: 5em;
+    color: white;
+}
+
+@media all and (max-width:500px) {
+    #sectiontwo {
+        background-attachment:scroll
+    }
+}
+
+#aboutme {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25%;
+    align-items: center;
+    font-size: 2.5rem;
+}
+#aboutme p{
+    text-align: end;
+    font-size: 1rem;
+}
+#myacademics{
+    margin-top: 10%;
+    display: flex;
+    text-align: end;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 25%;
+    font-size: 2.5em;
+}
+
+#myacademics p{
+    text-align: start;
+    font-size: 1rem;
+}
+
+#myprojects {
+    display: flex;
+    margin-top: 10%;
+    align-items: center;
+    flex-direction: column;
+    gap: 5em;
+    margin-bottom: 25%;
+    align-items: center;
+}
+#myprojects h3{
+    padding: 2.5% 0%;
+}
+#projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+#myprojects h2 {
+    font-size: 2rem;
+}
+
+#p1, #p2, #p3{
+    display: flex;
+    padding: 2.5%;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-image: var(--secondary);
+    animation: bg-animation 5s infinite alternate;
+    background-size: 300%;
+    border-radius: 5px;
     color: whitesmoke;
-    z-index: 2;
+    gap: 20px;
+}
+
+#myprojects img{
+    width: 25em;
+    border: 1em solid rgba(232, 225, 225, 0.2);
+}
+
+#myprojects p{
+    font-size: 0.75rem;
+}
+
+.hidden {
+    opacity: 0.35;
+    filter: blur(5px);
+    transition: all 1.5s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.freeze{
+    transform: translateX(50%);
+    transition: all 1.5s ease-out;
+}
+
+.slide{
+    transform: translateX(0%);
+}
+
+@media all and (max-width: 1050px) {
+    #sectiontwo {
+        gap: 4em;
+    }
+
+    #aboutme {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20%;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+    #aboutme p{
+        text-align: end;
+        font-size: 0.85rem;
+    }
+    #myacademics{
+        margin-top: 10%;
+        display: flex;
+        text-align: end;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: 20%;
+        font-size: 1.5rem;
+    }
+    
+    #myacademics p{
+        text-align: start;
+        font-size: 0.85rem;
+    }
+
+    #myprojects img{
+        width: 18.5em;
+        border: 1em solid rgba(232, 225, 225, 0.2);
+    }
+    
+}
+
+
+@media all and (max-width: 700px) {
+    #sectiontwo{
+        gap: 2.5em;
+    }
+    
+    #aboutme {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        gap: 20%;
+        align-items: center;
+        font-size: 1rem;
+    }
+    #aboutme p{
+        margin-top: 5%;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+    #myacademics{
+        margin-top: 10%;
+        display: flex;
+        text-align: end;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+        gap: 20%;
+        font-size: 1.1rem;
+    }
+    
+    #myacademics p{
+        margin-top: 5%;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+    #myprojects{
+        margin-top: 15%;
+    }
+
+    .freeze{
+        transform: translateY(50%);
+        transition: all 1.5s ease-out;
+    }
+    
+    .slide{
+        transform: translate(0%);
+    }
+
+    #p1, #p2, #p3{
+        display: flex;
+        padding: 10% 3.5%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #ffffffb2;
+        color: black;
+        gap: 15px;
+    }
+    #myprojects p{
+        font-size: 0.65rem;
+        padding: 3% 0%;
+    }
+    #myprojects img{
+        width: 15em;
+        border: 1em solid rgba(232, 225, 225, 0.2);
+    }
+}
+
+
+
+#sectionthree{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 2.5%;
+    text-align: center;
+    gap: 25px;
+    background-image: var(--gradient);
+    animation: bg-animation 5s infinite alternate;
+    background-size: 300%;
+    color: whitesmoke;
+}
+
+
+#sectionthree button{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.75% 2%;
+    width: 15%;
+    background-image: var(--secondary);
+    animation: bg-animation 5s infinite alternate;
+    background-size: 300%;
+    color: white;
+}
+
+#sectionthree a{
+    text-decoration: none;
+    list-style: none;
+    color: whitesmoke;
+}
+
+@media all and (max-width: 1050px) {
+    #sectionthree {
+        padding: 3.5% 2.5%;
+    }
+    #sectionthree button{
+        padding: 0.5% 1.75%;
+        font-size: 0.8rem;
+        width: 17.5%;
+    }
+    #sectionthree h3{
+        font-size: 1rem;
+    }
+
+}
+
+@media all and (max-width: 700px) {
+    #sectionthree {
+        padding: 10% 2.5%;
+        gap: 10px;
+    }
+    #sectionthree button {
+        width: 35%;
+        padding: 1.25% 2%;
+    }
 }
