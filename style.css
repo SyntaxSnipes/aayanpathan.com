@@ -77,7 +77,7 @@ z
     color: black;
     box-shadow:  -5px -5px 40px #ffffffb2,
     5px 5px 40px rgba(94, 104, 121, 0.945);
-    padding: 7.5% 15%;
+    padding: 0.5% 2%;
     text-decoration: none;
     color: black;
 
@@ -587,12 +587,13 @@ z
 }
 
 
-#sectionthree button{
+#sectionthree h4{
     border: 1px solid white;
+    background-color: white;
     border-radius: 10px;
-    padding: 0.75% 2%;
-    width: 15%;
+    padding: 5% 3.5%;
     opacity: 0.675;
+    width: 115%;
     color: black;
 }
 
@@ -600,16 +601,17 @@ z
     text-decoration: none;
     list-style: none;
     color: whitesmoke;
+    padding: 1% 2%;
 }
 
 @media all and (max-width: 1050px) {
     #sectionthree {
         padding: 3.5% 2.5%;
     }
-    #sectionthree button{
+    #sectionthree h4{
         padding: 0.5% 1.75%;
         font-size: 0.8rem;
-        width: 17.5%;
+        width: 100%;
     }
     #sectionthree h3{
         font-size: 1rem;
@@ -622,8 +624,8 @@ z
         padding: 10% 2.5%;
         gap: 10px;
     }
-    #sectionthree button {
-        width: 35%;
+    #sectionthree h4 {
+        width: 100%;
         padding: 1.25% 2%;
     }
 }

@@ -65,7 +65,6 @@ nav a:hover{
     box-shadow:  box-shadow -6px -6px 35px #ffffffb2,
     6px 6px 35px rgba(94, 104, 121, 0.945);
 }
-z
 
 #link {
     font-size: 1.25rem;
@@ -77,7 +76,7 @@ z
     color: black;
     box-shadow:  -5px -5px 40px #ffffffb2,
     5px 5px 40px rgba(94, 104, 121, 0.945);
-    padding: 7.5% 15%;
+    padding: 0.5% 2%;
     text-decoration: none;
     color: black;
 
