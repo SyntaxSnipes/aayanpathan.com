@@ -48,7 +48,7 @@ nav {
     animation: bg-animation 5s infinite alternate;
 }
 
-nav h3{
+nav a{
     font-size: 1.5rem;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.65);
@@ -56,16 +56,18 @@ nav h3{
     box-shadow:  -5px -5px 40px #ffffffb2,
     5px 5px 40px rgba(94, 104, 121, 0.945);
     padding: 0.25% 0.8%;
+    text-decoration: none;
+    color: black;
 }
 
-nav h3:hover{
+nav a:hover{
     font-size: 1.6rem;
     box-shadow:  box-shadow -6px -6px 35px #ffffffb2,
     6px 6px 35px rgba(94, 104, 121, 0.945);
 }
 z
 
-nav a {
+#link {
     font-size: 1.25rem;
     font-weight: 525;
     text-decoration: none;
@@ -76,10 +78,12 @@ nav a {
     box-shadow:  -5px -5px 40px #ffffffb2,
     5px 5px 40px rgba(94, 104, 121, 0.945);
     padding: 7.5% 15%;
+    text-decoration: none;
+    color: black;
 
 }
 
-nav a:hover {
+#link:hover {
     font-size: 1.375rem;
     box-shadow:  -6px -6px 35px #ffffffb2,
     6px 6px 35px rgba(94, 104, 121, 0.945);
@@ -204,7 +208,7 @@ nav a:hover {
     #sectionone img {
         height: 23.5em;
     }
-    nav h3 {
+    nav a {
         border-radius: 10px;
     }
     
@@ -247,12 +251,7 @@ nav a:hover {
         opacity: 0.8;
         animation: bg-animation 5s infinite alternate;
     }
-    nav ul {
-        gap: 0;
-        margin-right: 0em;
-        
-    }
-    nav a {
+    #link {
         font-size: 1rem;
         font-weight: 525;
         text-decoration: none;
@@ -272,14 +271,11 @@ nav a:hover {
         display: none;
     }
     
-    nav ul{
-        margin: 0;
-    }
-    nav h3{
+    nav a{
         font-size: 1.2rem;
         padding: 1% 0.8%;
     }
-    nav h3:hover{
+    nav a:hover{
         font-size: 1.1rem;
     }
     #introText {
@@ -314,13 +310,13 @@ nav a:hover {
     #sectionone {
         height: calc(100vh - 45px);
     }
-    nav h3{
+    nav a{
         border-radius: 10px;
         padding: 2% 3%;
         font-size: 0.8rem ;
     }
 
-    nav a {
+    #link {
         font-size: 0.7rem;
         font-weight: 525;
         text-decoration: none;

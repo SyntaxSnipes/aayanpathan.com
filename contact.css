@@ -1,4 +1,3 @@
-/* Reset and default styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +5,12 @@
     font-family: 'Comfortaa', cursive;
 }
 
-/* Global styles */
 html {
     scroll-snap-type: y proximity;
     scroll-padding-top: 45px;
 }
 
-body {
+body{
     margin: 0;
     padding: 0;
     overflow-x: hidden !important;
@@ -24,42 +22,52 @@ section {
 }
 
 :root {
-    --gradient: linear-gradient(45deg, #879af2, #d3208b, #fda000);
+    --gradient: linear-gradient(
+        45deg, #879af2, #d3208b, #fda000);
+
+
+    --secondary: linear-gradient(
+        135deg, #274b74, #8233c5, #e963fd);
 }
 
-/* Navigation bar */
 nav {
     display: flex;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 0px;
     width: 100%;
     z-index: 1;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0.75% 2.75%;
     white-space: nowrap;
-    height: 45px;
+    height: 45px !important;
     background-image: var(--gradient);
     background-size: 300%;
     opacity: 0.8;
     animation: bg-animation 5s infinite alternate;
 }
 
-nav h3 {
+nav a{
     font-size: 1.5rem;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.65);
     transition: font-size 0.5s ease-in-out;
-    box-shadow: -5px -5px 40px #ffffffb2, 5px 5px 40px rgba(94, 104, 121, 0.945);
+    box-shadow:  -5px -5px 40px #ffffffb2,
+    5px 5px 40px rgba(94, 104, 121, 0.945);
     padding: 0.25% 0.8%;
+    text-decoration: none;
+    color: black;
 }
 
-nav h3:hover {
+nav a:hover{
     font-size: 1.6rem;
-    box-shadow: -6px -6px 35px #ffffffb2, 6px 6px 35px rgba(94, 104, 121, 0.945);
+    box-shadow:  box-shadow -6px -6px 35px #ffffffb2,
+    6px 6px 35px rgba(94, 104, 121, 0.945);
 }
+z
 
-nav a {
+#link {
     font-size: 1.25rem;
     font-weight: 525;
     text-decoration: none;
@@ -67,63 +75,134 @@ nav a {
     border-radius: 8.5px;
     background-color: rgba(255, 255, 255, 0.65);
     color: black;
-    box-shadow: -5px -5px 40px #ffffffb2, 5px 5px 40px rgba(94, 104, 121, 0.945);
-    padding: 0.5% 2%;
+    box-shadow:  -5px -5px 40px #ffffffb2,
+    5px 5px 40px rgba(94, 104, 121, 0.945);
+    padding: 7.5% 15%;
+    text-decoration: none;
+    color: black;
+
 }
 
-nav a:hover {
+#link:hover {
     font-size: 1.375rem;
-    box-shadow: -6px -6px 35px #ffffffb2, 6px 6px 35px rgba(94, 104, 121, 0.945);
+    box-shadow:  -6px -6px 35px #ffffffb2,
+    6px 6px 35px rgba(94, 104, 121, 0.945);
 }
 
-/* Keyframes for background animation */
+
 @keyframes bg-animation {
-    0% {
+    0%{
         background-position: left;
     }
 
     100% {
         background-position: right;
     }
-}
+} 
 
-/* Media queries */
-@media all and (max-width: 1000px) {
+
+
+@keyframes revealText {
+    0%{
+        translate: -50%;
+        opacity: 0.1;
+    }
+
+    100% {
+        translate: 0 0;
+        opacity: 1;
+    }
+} 
+
+
+  @media all and (max-width: 1000px) {
     nav {
+        display: flex;
+        position: sticky !important;
+        top: 0px;
+        width: 100%;
+        z-index: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 0.75% 2.75%;
+        white-space: nowrap;
+        height: 45px !important;
+        background-image: var(--gradient);
+        background-size: 300%;
+        opacity: 0.8;
+        animation: bg-animation 5s infinite alternate;
+    }
+    nav a {
+        border-radius: 10px;
     }
 }
 
 @media all and (max-width: 700px) {
     nav {
+        display: flex;
+        position: sticky !important;
+        top: 0px;
+        width: 100%;
+        z-index: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 0.75% 2.5%;
+        white-space: nowrap;
+        height: 45px !important;
+        background-image: var(--gradient);
+        background-size: 300%;
+        opacity: 0.8;
+        animation: bg-animation 5s infinite alternate;
     }
-
-    nav a {
+    #link {
         font-size: 1rem;
+        font-weight: 525;
+        text-decoration: none;
+        transition: font-size 0.5s ease-in-out;
+        border-radius: 8.5px;
+        background-color: rgba(255, 255, 255, 0.65);
+        color: black;
+        box-shadow:  -5px -5px 40px #ffffffb2,
+        5px 5px 40px rgba(94, 104, 121, 0.945);
         padding: 1% 2%;
+    
     }
 
-    nav h3 {
+    
+    nav a{
         font-size: 1.2rem;
         padding: 1% 0.8%;
     }
-
-    nav h3:hover {
+    nav a:hover{
         font-size: 1.1rem;
     }
+  
 }
 
+
 @media all and (max-width: 500px) {
-    nav h3 {
+    nav a{
+        border-radius: 10px;
         padding: 2% 3%;
-        font-size: 0.8rem;
+        font-size: 0.8rem ;
     }
 
-    nav a {
+    #link {
         font-size: 0.7rem;
+        font-weight: 525;
+        text-decoration: none;
+        transition: font-size 0.5s ease-in-out;
+        border-radius: 8.5px;
+        background-color: rgba(255, 255, 255, 0.65);
+        color: black;
+        box-shadow:  -5px -5px 40px #ffffffb2,
+        5px 5px 40px rgba(94, 104, 121, 0.945);
         padding: 2.45% 3%;
+    
     }
+
 }
 
 /* Contacts section */
