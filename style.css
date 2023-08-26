@@ -6,9 +6,9 @@
 }
 
 html {
-    overflow-x: hidden !important;
     scroll-snap-type: y proximity;
     scroll-padding-top: 45px;
+
 }
 
 body{
@@ -20,6 +20,7 @@ body{
 
 section {
     scroll-snap-align: start;
+    overflow-x: hidden;
 }
 
 :root {
@@ -33,7 +34,8 @@ section {
 
 nav {
     display: flex;
-    position: sticky;
+    position: sticky !important;
+    overflow: hidden;
     top: 0px;
     width: 100%;
     z-index: 1;
@@ -91,6 +93,7 @@ z
 }
 
 #sectionone {
+    overflow-x: hidden;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -345,6 +348,7 @@ z
 /* SECTION TWO */
 
 #sectiontwo{
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     padding: 5% 15% 5% 15%;
@@ -583,6 +587,7 @@ z
         font-size: 1.75rem;
     }
     #programmingjourney p{
+        margin-top: 5%;
         text-align: center;
         font-size: 1.25rem;
     }
@@ -599,6 +604,7 @@ z
     }
 
     #myexpertise p{
+        margin-top: 5%;
         text-align: center;
         font-size: 1.25rem;
     }
@@ -688,6 +694,7 @@ z
         font-size: 1.5rem;
     }
     #programmingjourney p{
+        margin-top: 5%;
         text-align: center;
         font-size: 0.85rem;
     }
@@ -704,6 +711,7 @@ z
     }
 
     #myexpertise p{
+        margin-top: 5%;
         text-align: center;
         font-size: 0.85rem;
     }
@@ -745,6 +753,7 @@ z
 
 
 #sectionthree{
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
