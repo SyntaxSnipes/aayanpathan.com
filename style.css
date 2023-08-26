@@ -6,6 +6,7 @@
 }
 
 html {
+    overflow-x: hidden !important;
     scroll-snap-type: y proximity;
     scroll-padding-top: 45px;
 }
@@ -96,7 +97,7 @@ z
     align-items: center;
     color: white;
     background-image: var(--gradient);
-    background-size: 300%;
+    background-size: 375%;
     padding: 10% 5% 10% 7%;
     gap: 5em;
     animation: bg-animation 5s infinite alternate;
@@ -377,21 +378,52 @@ z
     text-align: end;
     font-size: 1rem;
 }
+
+#programmingjourney {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 7.5%;
+    align-items: center;
+    text-align: end;
+    font-size: 2.5rem;
+}
+#programmingjourney p{
+    text-align: start;
+    font-size: 0.95rem;
+}
+
 #myacademics{
     margin-top: 10%;
     display: flex;
-    text-align: end;
-    flex-direction: row-reverse;
+    text-align: start;
+    flex-direction: row;
     justify-content: space-between;
     gap: 25%;
     font-size: 2.5em;
 }
 
 #myacademics p{
-    text-align: start;
+    text-align: end;
     font-size: 1rem;
 }
 
+#myexpertise {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 7.5%;
+    align-items: center;
+    text-align: end;
+    font-size: 2.5rem;
+}
+
+#myexpertise p{
+    text-align: start;
+    font-size: 1rem;
+}
 #myprojects {
     display: flex;
     margin-top: 10%;
@@ -426,6 +458,7 @@ z
     border-radius: 5px;
     color: whitesmoke;
     gap: 20px;
+    overflow-x: hidden !important;
 }
 
 #myprojects img{
@@ -502,39 +535,72 @@ z
 
 @media all and (max-width: 700px) {
     #sectiontwo{
+        padding-top: 20%;
         gap: 2.5em;
     }
     
     #aboutme {
-        margin-top: 10%;
+        margin-top: 40%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         text-align: center;
         gap: 20%;
         align-items: center;
-        font-size: 1rem;
+        font-size: 1.75rem;
     }
     #aboutme p{
         margin-top: 5%;
         text-align: center;
-        font-size: 0.75rem;
+        font-size: 1.25rem;
     }
     #myacademics{
-        margin-top: 10%;
+        margin-top: 30%;
         display: flex;
-        text-align: end;
+        text-align: center;
         flex-direction: column;
         text-align: center;
         justify-content: space-between;
         gap: 20%;
-        font-size: 1.1rem;
+        font-size: 1.75rem;
     }
     
     #myacademics p{
         margin-top: 5%;
         text-align: center;
-        font-size: 0.75rem;
+        font-size: 1.25rem;
+    }
+
+    
+    #programmingjourney {
+        margin-top: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 7.5%;
+        align-items: center;
+        text-align: center;
+        font-size: 1.75rem;
+    }
+    #programmingjourney p{
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    #myexpertise {
+        margin-top: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 7.5%;
+        align-items: center;
+        text-align: center;
+        font-size: 1.75rem;
+    }
+
+    #myexpertise p{
+        text-align: center;
+        font-size: 1.25rem;
     }
 
     #myprojects{
@@ -569,6 +635,112 @@ z
         border: 1em solid rgba(232, 225, 225, 0.2);
     }
 }
+
+
+
+@media all and (max-width: 500px) {
+    #sectiontwo{
+        padding-top: 20%;
+        gap: 2.5em;
+    }
+    
+    #aboutme {
+        margin-top: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        gap: 20%;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+    #aboutme p{
+        margin-top: 5%;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    #myacademics{
+        margin-top: 30%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+        gap: 20%;
+        font-size: 1.5rem;
+    }
+    
+    #myacademics p{
+        margin-top: 5%;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    
+    #programmingjourney {
+        margin-top: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 7.5%;
+        align-items: center;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    #programmingjourney p{
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    #myexpertise {
+        margin-top: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 7.5%;
+        align-items: center;
+        text-align: center;
+        font-size: 1.55rem;
+    }
+
+    #myexpertise p{
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    #myprojects{
+        margin-top: 20%;
+    }
+
+    .freeze{
+        transform: translateY(50%);
+        transition: all 1.5s ease-out;
+    }
+    
+    .slide{
+        transform: translate(0%);
+    }
+
+    #p1, #p2, #p3{
+        display: flex;
+        padding: 10% 3.5%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #ffffffb2;
+        color: black;
+        gap: 15px;
+    }
+    #myprojects p{
+        font-size: 0.65rem;
+        padding: 3% 0%;
+    }
+    #myprojects img{
+        width: 15em;
+        border: 1em solid rgba(232, 225, 225, 0.2);
+    }
+}
+
 
 
 
@@ -621,11 +793,14 @@ z
 
 @media all and (max-width: 700px) {
     #sectionthree {
-        padding: 10% 2.5%;
+        padding: 8% 2.5%;
         gap: 10px;
     }
     #sectionthree h4 {
         width: 100%;
         padding: 1.25% 2%;
+    }
+    #sectionthree a{
+        width: 35%;
     }
 }
