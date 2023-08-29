@@ -25,3 +25,4 @@ const slidingObserver = new IntersectionObserver((entries) => {
 
 const freezeElements = document.querySelectorAll('.freeze');
 freezeElements.forEach((el) => slidingObserver.observe(el));
+

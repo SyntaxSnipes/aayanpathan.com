@@ -8,34 +8,25 @@
 html {
     scroll-snap-type: y proximity;
     scroll-padding-top: 45px;
-
 }
-
 body{
     margin: 0;
     padding: 0;
     overflow-x: hidden !important;
     width: 100% !important;
 }
-
 section {
     scroll-snap-align: start;
-    overflow-x: hidden;
 }
-
 :root {
     --gradient: linear-gradient(
         45deg, #879af2, #d3208b, #fda000);
-
-
     --secondary: linear-gradient(
         135deg, #274b74, #8233c5, #e963fd);
 }
-
 nav {
     display: flex;
-    position: sticky !important;
-    overflow: hidden;
+    position: sticky;
     top: 0px;
     width: 100%;
     z-index: 1;
@@ -50,7 +41,6 @@ nav {
     opacity: 0.8;
     animation: bg-animation 5s infinite alternate;
 }
-
 nav a{
     font-size: 1.5rem;
     border-radius: 10px;
@@ -62,14 +52,12 @@ nav a{
     text-decoration: none;
     color: black;
 }
-
 nav a:hover{
     font-size: 1.6rem;
     box-shadow:  box-shadow -6px -6px 35px #ffffffb2,
     6px 6px 35px rgba(94, 104, 121, 0.945);
 }
 z
-
 #link {
     font-size: 1.25rem;
     font-weight: 525;
@@ -83,40 +71,33 @@ z
     padding: 0.5% 2%;
     text-decoration: none;
     color: black;
-
 }
-
 #link:hover {
     font-size: 1.375rem;
     box-shadow:  -6px -6px 35px #ffffffb2,
     6px 6px 35px rgba(94, 104, 121, 0.945);
 }
-
 #sectionone {
-    overflow-x: hidden;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: white;
     background-image: var(--gradient);
-    background-size: 375%;
+    background-size: 300%;
     padding: 10% 5% 10% 7%;
     gap: 5em;
+    height: calc(100vh - 45px);
     animation: bg-animation 5s infinite alternate;
-
 }
-
 @keyframes bg-animation {
     0%{
         background-position: left;
     }
-
     100% {
         background-position: right;
     }
 } 
-
 #introText {
     display: flex;
     margin-bottom: 5em;
@@ -125,12 +106,10 @@ z
     gap: 15px;
     opacity: 0.785;
 }
-
 #introText h1 {
     font-size: 4.5rem;
     animation: revealText 1.5s ease-out;
 }
-
 #introText h3 {
     font-size: 2.25rem;
     animation: revealText 1s ease-out;
@@ -143,37 +122,30 @@ z
 }
 #sectionone img{
     height: 30em;
-    border-radius: 25px;
+    border-radius: 25px;  
     box-shadow: 0px 0px 70px 5px white;
     animation: revealImg 1.35s ease-out;
 }
-
-
-
 @keyframes revealText {
     0%{
         translate: -50%;
         opacity: 0.1;
     }
-
     100% {
         translate: 0 0;
         opacity: 1;
     }
 } 
-
 @keyframes revealImg {
     0%{
         translate: 50%;
         opacity: 0.1;
     }
-
     100% {
         translate: 0 0;
         opacity: 1;
     }
 } 
-
 .blinking-cursor {
     font-weight: 100;
     font-size: 5rem;
@@ -190,7 +162,6 @@ z
       color: white;
     }
   }
-
   @media all and (max-width: 1000px) {
     nav {
         display: flex;
@@ -219,11 +190,9 @@ z
     #introText {
     margin-bottom: 3.5em;
     }
-
     #introText h1 {
     font-size: 3rem;
     }
-
     #introText h3 {
     font-size: 2rem;
     }
@@ -236,7 +205,6 @@ z
     }
   
 }
-
 @media all and (max-width: 700px) {
     nav {
         display: flex;
@@ -289,12 +257,10 @@ z
     justify-content: center;
     padding-right: 3.5%;
     }
-
     #introText h1 {
     padding-left: 7.5%;
     font-size: 3.2rem;
     }
-
     #introText h3 {
     font-size: 1.5rem;
     text-align: center;
@@ -308,8 +274,6 @@ z
   }
   
 }
-
-
 @media all and (max-width: 500px) {
     #sectionone {
         height: calc(100vh - 45px);
@@ -319,7 +283,6 @@ z
         padding: 2% 3%;
         font-size: 0.8rem ;
     }
-
     #link {
         font-size: 0.7rem;
         font-weight: 525;
@@ -333,9 +296,7 @@ z
         padding: 2.45% 3%;
     
     }
-
 }
-
 .background {
     position:relative;
     bottom: 50em;
@@ -343,12 +304,8 @@ z
     z-index: 0;
     opacity: 0.5;
   }
-
-
 /* SECTION TWO */
-
 #sectiontwo{
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     padding: 5% 15% 5% 15%;
@@ -362,13 +319,11 @@ z
     gap: 5em;
     color: white;
 }
-
 @media all and (max-width:500px) {
     #sectiontwo {
         background-attachment:scroll
     }
 }
-
 #aboutme {
     margin-top: 10%;
     display: flex;
@@ -445,12 +400,12 @@ z
     flex-direction: column;
     align-items: center;
     gap: 50px;
+    overflow-x: hidden;
+    width: 100%;
 }
-
 #myprojects h2 {
     font-size: 2rem;
 }
-
 #p1, #p2, #p3{
     display: flex;
     padding: 2.5%;
@@ -469,38 +424,33 @@ z
     width: 25em;
     border: 1em solid rgba(232, 225, 225, 0.2);
 }
-
 #myprojects p{
     font-size: 0.75rem;
 }
-
 .hidden {
     opacity: 0.35;
     filter: blur(5px);
     transition: all 1.5s;
 }
-
 .show {
     opacity: 1;
     filter: blur(0);
 }
-
 .freeze{
     transform: translateX(50%);
     transition: all 1.5s ease-out;
     overflow-x: hidden !important;
 }
-
 .slide{
     transform: translateX(0%);
     overflow-x: hidden !important;
 }
 
+
 @media all and (max-width: 1050px) {
     #sectiontwo {
         gap: 4em;
     }
-
     #aboutme {
         margin-top: 10%;
         display: flex;
@@ -518,7 +468,8 @@ z
         margin-top: 10%;
         display: flex;
         text-align: end;
-        flex-direction: row-reverse;
+        flex-direction: row;
+        text-align: start;
         justify-content: space-between;
         gap: 20%;
         font-size: 1.5rem;
@@ -528,21 +479,39 @@ z
         text-align: start;
         font-size: 0.85rem;
     }
-
     #myprojects img{
         width: 18.5em;
         border: 1em solid rgba(232, 225, 225, 0.2);
     }
+
+    
+
+    #programmingjourney {
+        font-size: 1.5rem;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    #programmingjourney p{
+        font-size: 0.85rem;
+    }
+
+    #myexpertise {
+        font-size: 1.5rem;
+    }
+
+    #myexpertise p{
+        font-size: 0.85rem;
+    }
+
     
 }
-
 
 @media all and (max-width: 700px) {
     #sectiontwo{
         padding-top: 20%;
         gap: 2.5em;
     }
-    
+
     #aboutme {
         margin-top: 40%;
         display: flex;
@@ -568,14 +537,13 @@ z
         gap: 20%;
         font-size: 1.75rem;
     }
-    
     #myacademics p{
         margin-top: 5%;
         text-align: center;
         font-size: 1.25rem;
     }
 
-    
+
     #programmingjourney {
         margin-top: 30%;
         display: flex;
@@ -612,7 +580,6 @@ z
     #myprojects{
         margin-top: 15%;
     }
-
     .freeze{
         transform: translateY(50%);
         transition: all 1.5s ease-out;
@@ -621,7 +588,6 @@ z
     .slide{
         transform: translate(0%);
     }
-
     #p1, #p2, #p3{
         display: flex;
         padding: 10% 3.5%;
@@ -643,13 +609,12 @@ z
 }
 
 
-
 @media all and (max-width: 500px) {
     #sectiontwo{
         padding-top: 20%;
         gap: 2.5em;
     }
-    
+
     #aboutme {
         margin-top: 40%;
         display: flex;
@@ -675,14 +640,14 @@ z
         gap: 20%;
         font-size: 1.5rem;
     }
-    
+
     #myacademics p{
         margin-top: 5%;
         text-align: center;
         font-size: 0.85rem;
     }
 
-    
+
     #programmingjourney {
         margin-top: 30%;
         display: flex;
@@ -724,7 +689,7 @@ z
         transform: translateY(50%);
         transition: all 1.5s ease-out;
     }
-    
+
     .slide{
         transform: translate(0%);
     }
@@ -749,11 +714,7 @@ z
     }
 }
 
-
-
-
 #sectionthree{
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -766,8 +727,6 @@ z
     background-size: 300%;
     color: whitesmoke;
 }
-
-
 #sectionthree h4{
     border: 1px solid white;
     background-color: white;
@@ -777,14 +736,12 @@ z
     width: 115%;
     color: black;
 }
-
 #sectionthree a{
     text-decoration: none;
     list-style: none;
     color: whitesmoke;
     padding: 1% 2%;
 }
-
 @media all and (max-width: 1050px) {
     #sectionthree {
         padding: 3.5% 2.5%;
@@ -797,7 +754,6 @@ z
     #sectionthree h3{
         font-size: 1rem;
     }
-
 }
 
 @media all and (max-width: 700px) {
