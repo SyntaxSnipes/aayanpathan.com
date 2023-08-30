@@ -377,6 +377,7 @@ z
     align-items: center;
     text-align: end;
     font-size: 2.5rem;
+    overflow-x: hidden;
 }
 
 #myexpertise p{
@@ -400,7 +401,6 @@ z
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    overflow-x: hidden;
     width: 100%;
 }
 #myprojects h2 {
