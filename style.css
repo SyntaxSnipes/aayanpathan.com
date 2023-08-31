@@ -14,6 +14,11 @@ body{
     padding: 0;
     overflow-x: hidden !important;
     width: 100% !important;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 section {
     scroll-snap-align: start;
@@ -41,6 +46,7 @@ nav {
     opacity: 0.8;
     animation: bg-animation 5s infinite alternate;
 }
+
 nav a{
     font-size: 1.5rem;
     border-radius: 10px;
@@ -52,12 +58,13 @@ nav a{
     text-decoration: none;
     color: black;
 }
+
 nav a:hover{
     font-size: 1.6rem;
     box-shadow:  box-shadow -6px -6px 35px #ffffffb2,
     6px 6px 35px rgba(94, 104, 121, 0.945);
 }
-z
+
 #link {
     font-size: 1.25rem;
     font-weight: 525;
@@ -71,12 +78,16 @@ z
     padding: 0.5% 2%;
     text-decoration: none;
     color: black;
+
 }
+
 #link:hover {
     font-size: 1.375rem;
     box-shadow:  -6px -6px 35px #ffffffb2,
     6px 6px 35px rgba(94, 104, 121, 0.945);
 }
+
+
 #sectionone {
     display: flex;
     flex-direction: row;
@@ -392,6 +403,7 @@ z
     gap: 5em;
     margin-bottom: 25%;
     align-items: center;
+    overflow: hidden;
 }
 #myprojects h3{
     padding: 2.5% 0%;
@@ -402,6 +414,7 @@ z
     align-items: center;
     gap: 50px;
     width: 100%;
+    overflow: hidden;
 }
 #myprojects h2 {
     font-size: 2rem;
@@ -579,6 +592,7 @@ z
 
     #myprojects{
         margin-top: 15%;
+        overflow-x: hidden;
     }
     .freeze{
         transform: translateY(50%);
@@ -694,6 +708,7 @@ z
     .slide{
         transform: translate(0%);
     }
+
 
     #p1, #p2, #p3{
         display: flex;
