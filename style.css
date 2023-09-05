@@ -248,10 +248,45 @@ nav a:hover{
     
     }
     #sectionone {
+        height: calc(100svh - 45px);
+        height: calc(100lvh - 45px);
+        height: calc(100dvh - 45px);
         align-items: center;
+        align-self: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: relative;
+        gap: 0;
+    
+
     }
     #sectionone img{
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This property makes the image behave like a background */
+        z-index: -1; /* Puts the image behind other content */
+        opacity: 0.7; /* Adjust opacity as needed */
+        animation: none;
+        border-radius: 0px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        filter: blur(1px);
+        
+    }
+    
+    #sectionone::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+        z-index: 0; /* Place the overlay behind the content */
     }
     
     nav a{
@@ -262,32 +297,38 @@ nav a:hover{
         font-size: 1.1rem;
     }
     #introText {
-    margin-bottom: 3.5em;
+    margin-bottom: 2.5em;
     text-align: center;
     align-self: center;
     justify-content: center;
-    padding-right: 3.5%;
+    padding-right: 2%;
+
+
     }
     #introText h1 {
     padding-left: 7.5%;
     font-size: 3.2rem;
+    opacity: 0.9;
     }
     #introText h3 {
     font-size: 1.5rem;
     text-align: center;
+    opacity: 0.9;
     }
     #introText p{
     padding: 5% 0%;
     font-size: 1em;
+    opacity: 0.9;
 }
 .blinking-cursor {
     font-size: 3.35rem;
+    opacity: 0.9;
   }
   
 }
 @media all and (max-width: 500px) {
     #sectionone {
-        height: calc(100vh - 45px);
+
     }
     nav a{
         border-radius: 10px;
