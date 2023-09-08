@@ -21,6 +21,15 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+body .hidden {
+  opacity: 0.35;
+  filter: blur(5px);
+  transition: all 1.5s;
+}
+body .show {
+  opacity: 1;
+  filter: blur(0);
+}
 
 section {
   scroll-snap-align: start;
@@ -193,6 +202,7 @@ nav a:hover {
   text-align: start;
   gap: 15px;
   opacity: 0.785;
+  animation: bg-animation 5s infinite alternate;
 }
 #sectionone #introText h1 {
   font-size: 4.5rem;
@@ -207,21 +217,6 @@ nav a:hover {
   font-size: 1.1em;
   animation: revealText 1.8s ease-out;
   line-height: 1.5em;
-}
-#sectionone .blinking-cursor {
-  font-weight: 100;
-  font-size: 5rem;
-  color: white;
-  opacity: 0.785;
-  animation: 1.5s blink step-end infinite;
-}
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
 }
 @keyframes revealText {
   0% {
@@ -243,12 +238,27 @@ nav a:hover {
     opacity: 1;
   }
 }
+#sectionone .blinking-cursor {
+  font-weight: 100;
+  font-size: 5rem;
+  color: white;
+  opacity: 0.785;
+  animation: 1.5s blink step-end infinite;
+}
 @keyframes blink {
   from, to {
     color: transparent;
   }
   50% {
     color: white;
+  }
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
   }
 }
 @media all and (max-width: 1000px) {
@@ -299,7 +309,6 @@ nav a:hover {
     margin: 0;
     padding: 0;
     border: 0;
-    transition: none;
     filter: blur(1px);
   }
   #sectionone::before {

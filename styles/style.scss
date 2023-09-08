@@ -26,12 +26,23 @@ body {
   &::-webkit-scrollbar {
     display: none;
   }
+.hidden {
+    opacity: 0.35;
+    filter: blur(5px);
+    transition: all 1.5s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+}
   
 }
 
 
 section {
   scroll-snap-align: start;
+  
+  
 }
 
 
@@ -186,8 +197,8 @@ nav {
 }
 
 
-
 #sectionone {
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -206,6 +217,7 @@ nav {
     box-shadow: 0px 0px 70px 5px $white;
     animation: revealImg 1.35s ease-out;
   }
+  
 
   #introText {
     display: flex;
@@ -214,6 +226,7 @@ nav {
     text-align: start;
     gap: 15px;
     opacity: 0.785;
+    animation: bg-animation 5s infinite alternate;
 
     h1 {
       font-size: 4.5rem;
@@ -232,7 +245,29 @@ nav {
       line-height: 1.5em;
     }
   }
-
+  
+  @keyframes revealText {
+    0% {
+      translate: -50%;
+      opacity: 0.1;
+    }
+    100% {
+      translate: 0 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes revealImg {
+    0% {
+      translate: 50%;
+      opacity: 0.1;
+    }
+    100% {
+      translate: 0 0;
+      opacity: 1;
+    }
+  }
+  
   .blinking-cursor {
     font-weight: 100;
     font-size: 5rem;
@@ -240,47 +275,29 @@ nav {
     opacity: 0.785;
     animation: 1.5s blink step-end infinite;
   }
+  
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
 
 
-@keyframes bg-animation {
-  0% {
-    background-position: left;
+  @keyframes bg-animation {
+    0% {
+      background-position: left;
+    }
+    100% {
+      background-position: right;
+    }
   }
-  100% {
-    background-position: right;
-  }
-}
+  
 
-@keyframes revealText {
-  0% {
-    translate: -50%;
-    opacity: 0.1;
-  }
-  100% {
-    translate: 0 0;
-    opacity: 1;
-  }
-}
 
-@keyframes revealImg {
-  0% {
-    translate: 50%;
-    opacity: 0.1;
-  }
-  100% {
-    translate: 0 0;
-    opacity: 1;
-  }
-}
 
-@keyframes blink {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
 
 @media all and (max-width: 1000px) {
   img {
@@ -308,7 +325,6 @@ nav {
 
 }
 
-
 @media all and (max-width: 700px) {
     height: calc(100svh - 45px);
     height: calc(100lvh - 45px);
@@ -334,7 +350,6 @@ nav {
         margin: 0;
         padding: 0;
         border: 0;
-        transition: none;
         filter: blur(1px);
     }
 
@@ -348,7 +363,6 @@ nav {
         background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
         z-index: 0; /* Place the overlay behind the content */
     }
-
 
   #introText {
     margin-bottom: 2.5em;
@@ -379,8 +393,6 @@ nav {
   }
 }
 
-
-
 }
 
 
@@ -399,7 +411,6 @@ nav {
     gap: 5em;
     color: white;
 
-
     #aboutme {
         margin-top: 10%;
         display: flex;
@@ -413,7 +424,6 @@ nav {
             font-size: 1rem;
         }
     }
-
 
     #programmingjourney {
         margin-top: 10%;
@@ -430,7 +440,6 @@ nav {
         }
     }
 
-
     #myacademics{
         margin-top: 10%;
         display: flex;
@@ -445,8 +454,6 @@ nav {
             font-size: 1rem;
         }
     }
-
-
 
     #myexpertise {
         margin-top: 10%;
@@ -463,7 +470,6 @@ nav {
             font-size: 1rem;
         }
     }
-
 
     #myprojects {
         display: flex;
@@ -533,10 +539,8 @@ nav {
         overflow-x: hidden !important;
     }
 
-
     @media all and (max-width: 1050px) {
         gap: 4em;
-
         #aboutme {
             margin-top: 10%;
             display: flex;
@@ -550,7 +554,6 @@ nav {
                 font-size: 0.85rem;
             }
         }
-
         #myacademics{
             margin-top: 10%;
             display: flex;
@@ -565,15 +568,10 @@ nav {
                 font-size: 0.85rem;
             }
         }
-        
-
         #myprojects img{
             width: 18.5em;
             border: 1em solid rgba(232, 225, 225, 0.2);
         }
-
-        
-
         #programmingjourney {
             font-size: 1.5rem;
             flex-direction: row-reverse;
@@ -581,7 +579,6 @@ nav {
             p{
                 font-size: 0.85rem;
             }
-        
         }
 
         #myexpertise {
@@ -590,17 +587,12 @@ nav {
                 font-size: 0.85rem;
             }
         }
-
-
-
     }
 
     @media all and (max-width: 700px) {
-
         background-attachment:scroll;
         padding-top: 20%;
         gap: 2.5em;
-
         #aboutme {
             margin-top: 40%;
             display: flex;
@@ -634,7 +626,6 @@ nav {
         
         }
 
-
         #programmingjourney {
             margin-top: 30%;
             display: flex;
@@ -650,7 +641,6 @@ nav {
                 font-size: 1.25rem;
             }
         }
-
 
         #myexpertise {
             margin-top: 30%;
@@ -668,7 +658,6 @@ nav {
             }
         
         }
-
 
         #myprojects{
             margin-top: 15%;
@@ -741,9 +730,6 @@ nav {
                 font-size: 0.85rem;
             }
         }
-
-
-
 
         #programmingjourney {
             margin-top: 30%;
